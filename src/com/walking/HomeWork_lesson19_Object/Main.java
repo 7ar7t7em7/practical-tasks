@@ -1,6 +1,5 @@
 package com.walking.HomeWork_lesson19_Object;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -14,16 +13,17 @@ public class Main {
 						new Car("Mercedes", "G450", "V422RK", "asdXXX"),
 						new Car("Lada", "Granta", "V444RK", "1zxcXXX"),
 						new Car("Chevrolet", "Aveo", "V334RK", "123Xyu")};
-		Car[] findCars = new Car[cars.length];
+		//Car[] findCars = new Car[cars.length];
 		String str = "";
-		do {
+		while (cars.length != 1) {
 			System.out.println("Search by:\n");
-			System.out.println("1 - brand, 2 - model, 3 - number, 4 - VIN");
+			System.out.println("1 - brand, 2 - model, 3 - number, 4 - VIN\n");
 			int searchBy = sc.nextInt();
 			if (searchBy != 1 && searchBy != 2 && searchBy != 3 && searchBy != 4) {
 				System.out.println("Incorrect!\n Try again");
 				System.exit(0);
 			}
+			
 			if(searchBy == 1) {
 				System.out.println("Enter brand:\n");
 				str = sc.next();
@@ -37,14 +37,51 @@ public class Main {
 				System.out.println("Enter VIN:\n");
 				str = sc.next();
 			}
-			findCars = Car.findCar(cars, str, searchBy);
-		} while ((findCars[0] != null && findCars[1] == null) && findCars[0] == null);
-		for (Car car : findCars) {
+			cars = Car.findCar(cars, str, searchBy);
+			if(cars == null) {
+				System.out.println("No such car in base");
+				break;}
+			cars = Main.cutArrayOfCars(cars);
+				
+			for (Car car : cars) {
+				if(car == null) {
+					continue;
+				}
+			System.out.println(car.toString());
+			
+		}
+			
+		}
+		sc.close();
+	}
+	
+	private static Car[] cutArrayOfCars(Car[] cars) {
+		
+		if (cars.length == 0) {
+			return null;
+		}
+		//считаем непустые ссылки в массиве
+		int count = 0;
+		for (Car car : cars) {
+			if(car != null) {
+				count++;
+			}
+		}
+		
+		
+		Car[] carsForReturn = new Car[count];
+		count = 0;
+		
+		for (Car car : cars) {
 			if(car == null) {
 				continue;
-			}
-			System.out.println(car.toString());
+			}else {
+				carsForReturn[count] = car;
+				count++;
+			}			
 		}
+		
+		return carsForReturn; 
 	}
 	
 }

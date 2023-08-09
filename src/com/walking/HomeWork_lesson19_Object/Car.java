@@ -56,6 +56,9 @@ public class Car {
 					x++;
 				}
 			}
+			if(x==0) {
+				return null;
+			}
 		}else if(field == 2) {
 			int x = 0;
 			for (Car car : carsForSearch) {
@@ -63,6 +66,9 @@ public class Car {
 					carsForReturn[x] = car;
 					x++;
 				}
+			}
+			if(x==0) {
+				return null;
 			}
 		}else if(field == 3) {
 			int x = 0;
@@ -72,6 +78,9 @@ public class Car {
 					x++;
 				}
 			}
+			if(x==0) {
+				return null;
+			}
 		}else if(field == 4) {
 			int x = 0;
 			for (Car car : carsForSearch) {
@@ -79,6 +88,9 @@ public class Car {
 					carsForReturn[x] = car;
 					x++;
 				}
+			}
+			if(x==0) {
+				return null;
 			}
 		}
 		return carsForReturn;
