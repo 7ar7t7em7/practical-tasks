@@ -32,8 +32,10 @@ public class Main {
         String shapeString = createShapeString(length, shapeType);
         System.out.println(shapeString);
     }
+        
+        
 
-    private static String createShapeString(int length, int type) {
+    private static String createShapeString(int length, int type){
         EquilateralShape shape;
 
         switch (type) {
