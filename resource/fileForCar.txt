@@ -1,0 +1,4 @@
+Lada~Granta~774~black
+Daewoo~Lanos~222~white
+BMW~705~111~red
+Mercedes~GLS~987~red
