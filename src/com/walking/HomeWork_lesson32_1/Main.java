@@ -17,20 +17,22 @@ public class Main {
 		
 		CarRepository.saveCars(carsForSaving);
 		
+//		Car[] carsForReading = new Car[carsForSaving.length];
+//		carsForReading = CarRepository.parseFile();
+		
+//		for (Car car : carsForReading) {
+//			System.out.println(car);
+//		}
+		
+		
+		
+//		car3.setColor("red");
+		
+//		CarRepository.saveCars(carsForSaving);
+		
 		Car[] carsForReading = new Car[carsForSaving.length];
-		carsForReading = CarRepository.parseFile();
-		
-		for (Car car : carsForReading) {
-			System.out.println(car);
-		}
-		
-		car3.setColor("red");
-		
-		CarRepository.saveCars(carsForSaving);
-		
-		//Car[] carsForReading = new Car[carsForSaving.length];
-		carsForReading = CarRepository.parseFile();
-		
+		carsForReading = CarRepository.parseFileByBufferedReader();
+
 		for (Car car : carsForReading) {
 			System.out.println(car);
 		}
