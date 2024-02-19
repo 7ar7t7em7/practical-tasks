@@ -19,10 +19,22 @@ public class mySLL<T> {
 		size = 0;
 	}
 	
+	int size() {return size;}
+	
+	boolean has(T t) {
+		Node<T> node = head.getNext();
+		while (node.getNext()!=null) {
+			if(node.getValue() == t) {return true;}
+			node = node.getNext();
+		}
+		
+		return false;
+	}
+	
 	void printSLL() {
-			Node<T> node = head;
-			while(node.hasNext()) {
-				System.out.println(node.getNext().getValue());
+			Node<T> node = head.getNext();
+			while (node.getNext()!=null) {
+				System.out.println(node.getValue());
 				node = node.getNext();
 			}
 	}
@@ -31,15 +43,33 @@ public class mySLL<T> {
 	void add(T t){
 		size++;
 		Node<T> newNode = new Node<>(t);
+//		if(head.getNext() == tail) {
+//			newNode.setNext(tail);
+//			head.setNext(newNode);}
+//		else {
+//			newNode.setNext(head.getNext());
+//			head.setNext(newNode);
+//		}
 		if(head.getNext() == tail) {
-			newNode.setNext(tail);
-			head.setNext(newNode);}
-		else {
+			tail = newNode; 
+		}else {
 			newNode.setNext(head.getNext());
 			head.setNext(newNode);
 		}
 	}
 	
-	
+	mySLL<T> reverse(){
+		mySLL<T> reverseSLL = new mySLL<>();
+		//set tail
+		Node<T> node = head.getNext();
+		reverseSLL.tail = node;
+		reverseSLL.tail.setNext(null);
+		while(node.getNext()!=null) {
+			reverseSLL.add(node.getValue());
+			node = node.getNext();
+		}
+		
+		return reverseSLL;
+		}
 	
 }

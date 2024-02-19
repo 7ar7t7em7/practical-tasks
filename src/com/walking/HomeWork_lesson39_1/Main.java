@@ -7,11 +7,14 @@ public class Main {
 		mySLL<String> a = new mySLL<>();
 		a.add("A");
 		a.add("B");
-		System.out.println(1);
-//		a.add("B");
 		a.add("C");
 		a.add("D");
+		System.out.println("Size is " + a.size());
 		a.printSLL();
-		System.out.println(2);
+		System.out.println();
+		
+		a.reverse();
+		a.printSLL();
+		
 	}
 }

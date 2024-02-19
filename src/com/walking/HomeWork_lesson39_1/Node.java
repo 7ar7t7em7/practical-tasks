@@ -11,17 +11,11 @@ public class Node<N> {
 	
 	Node(N n){this.n = n;}
 	
-	boolean hasNext() {
-		return next != null;
-	}
+	boolean hasNext() {return next != null;}
 	
 	@Override
-	public int hashCode() {
-		return super.hashCode() + 1;
-	}
+	public int hashCode() {return super.hashCode() + 1;}
 	
 	@Override
-	public String toString() {
-		return super.toString();
-	}
+	public String toString() {return super.toString();}
 }
