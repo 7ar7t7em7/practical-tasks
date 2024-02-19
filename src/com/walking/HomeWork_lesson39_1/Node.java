@@ -1,17 +1,15 @@
 package com.walking.HomeWork_lesson39_1;
 
 public class Node<N> {
-	private N node;
-	private Node next;
+	private N n;
+	private Node<N> next;
 	
-	Node(N n){
-		this.node = n;
-	}
-
-	public N getNode() {return node;}
-	public Node getNext() {return next;}
-	public void setNode(N node) {this.node = node;}
-	public void setNext(Node next) {this.next = next;}
+	public N 		getValue() 					{return n;}
+	public Node<N> 	getNext()	 				{return next;}
+	public void 	setValue(N n)	 			{this.n = n;}
+	public void 	setNext(Node<N> next) 		{this.next = next;}
+	
+	Node(N n){this.n = n;}
 	
 	boolean hasNext() {
 		return next != null;

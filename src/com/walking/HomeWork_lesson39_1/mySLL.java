@@ -1,24 +1,45 @@
 package com.walking.HomeWork_lesson39_1;
 
-public class mySLL {
-	private Node n;
-	private Node head;
-	private Node tail;
+public class mySLL<T> {
+	private Node<T>	head;
+	private Node<T>	tail;
+	private int 	size;
 	
-	public Node getHead() {return head;}
-	public void setHead(Node head) {this.head = head;}
+//	public void setNode(Node node) {}
+	public Node<T> getHead() {return head;}
+	public void setHead(Node<T> node) {this.head = node;}
+	public Node<T> getTail() {return tail;}
+	public void setTail(Node<T> tail) {this.tail = tail;}
 	
 	mySLL(){
-		this.tail = null;
-		this.head = null;
-		this.n = null;
+		tail = new Node<T>(null);
+		head = new Node<T>(null);
+		tail.setNext(null);
+		head.setNext(tail);
+		size = 0;
 	}
 	
-	void printMySLL() {
-		
+	void printSLL() {
+			Node<T> node = head;
+			while(node.hasNext()) {
+				System.out.println(node.getNext().getValue());
+				node = node.getNext();
+			}
 	}
 	
-	void add(Node n){
-		
+	
+	void add(T t){
+		size++;
+		Node<T> newNode = new Node<>(t);
+		if(head.getNext() == tail) {
+			newNode.setNext(tail);
+			head.setNext(newNode);}
+		else {
+			newNode.setNext(head.getNext());
+			head.setNext(newNode);
+		}
 	}
+	
+	
+	
 }
