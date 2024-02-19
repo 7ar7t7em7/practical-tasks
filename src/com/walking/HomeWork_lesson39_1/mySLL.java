@@ -2,20 +2,20 @@ package com.walking.HomeWork_lesson39_1;
 
 public class mySLL<T> {
 	private Node<T>	head;
-	private Node<T>	tail;
+	//private Node<T>	tail;
 	private int 	size;
 	
 //	public void setNode(Node node) {}
 	public Node<T> getHead() {return head;}
 	public void setHead(Node<T> node) {this.head = node;}
-	public Node<T> getTail() {return tail;}
-	public void setTail(Node<T> tail) {this.tail = tail;}
+	//public Node<T> getTail() {return tail;}
+	//public void setTail(Node<T> tail) {this.tail = tail;}
 	
 	mySLL(){
-		tail = new Node<T>(null);
+		//tail = new Node<T>(null);
 		head = new Node<T>(null);
-		tail.setNext(null);
-		head.setNext(tail);
+		//tail.setNext(null);
+		//head.setNext(tail);
 		size = 0;
 	}
 	
@@ -50,26 +50,9 @@ public class mySLL<T> {
 //			newNode.setNext(head.getNext());
 //			head.setNext(newNode);
 //		}
-		if(head.getNext() == tail) {
-			tail = newNode; 
-		}else {
-			newNode.setNext(head.getNext());
-			head.setNext(newNode);
-		}
-	}
-	
-	mySLL<T> reverse(){
-		mySLL<T> reverseSLL = new mySLL<>();
-		//set tail
-		Node<T> node = head.getNext();
-		reverseSLL.tail = node;
-		reverseSLL.tail.setNext(null);
-		while(node.getNext()!=null) {
-			reverseSLL.add(node.getValue());
-			node = node.getNext();
-		}
 		
-		return reverseSLL;
-		}
+		
+	}
+
 	
 }

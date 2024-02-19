@@ -13,7 +13,6 @@ public class Main {
 		a.printSLL();
 		System.out.println();
 		
-		a.reverse();
 		a.printSLL();
 		
 	}
