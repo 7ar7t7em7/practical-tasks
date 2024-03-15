@@ -4,16 +4,23 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		mySLL<String> a = new mySLL<>();
-		a.add("A");
-		a.add("B");
-		a.add("C");
-		a.add("D");
-		System.out.println("Size is " + a.size());
-		a.printSLL();
-		System.out.println();
+		mySLL<Integer> a = new mySLL<>();
+		a.add(1);
+		a.add(2);
+		a.add(3);
+		a.add(4);
+		a.add(5);
+		a.add(6);
+		a.add(7);
+		a.add(8);
+		System.out.println("size =" + a.size());
+		a.delete(6);
+		a.delete(1);
 		
-		a.printSLL();
+		a.delete(8);
+		System.out.println("size =" + a.size());
+		
 		
 	}
+
 }
